@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 dotenv.config()
-const backendDomain = process.env.BACKEND_URL || 'http://localhost:5002'
+const backendDomain = process.env.BACKEND_URL 
 const SummaryApi = {
     signUP:{
         url:`${backendDomain}/api/signup`,
