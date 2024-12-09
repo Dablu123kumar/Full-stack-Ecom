@@ -1,0 +1,105 @@
+
+const backendDomain = 'http://localhost:5002'
+const SummaryApi = {
+    signUP:{
+        url:`${backendDomain}/api/signup`,
+        method:"post"
+    },
+    logIN:{
+        url:`${backendDomain}/api/login`,
+        method:"post"
+    },
+    current_user:{
+        url:`${backendDomain}/api/user-details`,
+        method:"get"
+    },
+    logout_user:{
+        url:`${backendDomain}/api/logout`,
+        method:"get"
+    },
+    allUsers:{
+        url:`${backendDomain}/api/all-users`,
+        method:"get"
+    },
+    updateUser:{
+        url:`${backendDomain}/api/update-user`,
+        method:"post"
+    },
+    SendOTPEmail:{
+        url:`${backendDomain}/api/send-email`,
+        method:"post"
+    },
+    ResetPassword:{
+        url:`${backendDomain}/api/reset-password`,
+        method:"post"
+    },
+    uploadProduct:{
+        url:`${backendDomain}/api/upload-product`,
+        method:"post"
+    },
+    allProduct:{
+        url:`${backendDomain}/api/get-product`,
+        method:"get"
+    },
+    updateProduct:{
+        url:`${backendDomain}/api/update-product`,
+        method:"post"
+    },
+    getProductCategory:{
+        url:`${backendDomain}/api/get-product-category`,
+        method:"get"
+    },
+   
+    CategoryWiseProduct:{
+        url:`${backendDomain}/api/category-wise-product`,
+        method:"post"
+    },
+    ProductDetails:{
+        url:`${backendDomain}/api/product-details`,
+        method:"post"
+    },
+    addToCartProduct:{
+        url:`${backendDomain}/api/addtoCart`,
+        method:"post"
+    },
+   
+    addToCartProductCount:{
+        url:`${backendDomain}/api/countAddtoCartProduct`,
+        method:"get"
+    },
+    viewCartProduct:{
+        url:`${backendDomain}/api/viewCartProduct`,
+        method:"get"
+    },
+    updateCartProduct:{
+        url:`${backendDomain}/api/updateCartProduct`,
+        method:"post"
+    },
+    deleteCartProduct:{
+        url:`${backendDomain}/api/deleteCartProduct`,
+        method:"post"
+    },
+     searchProduct:{
+        url:`${backendDomain}/api/search-product`,
+        method:"get"
+    },
+     filterProduct:{
+        url:`${backendDomain}/api/filter-product`,
+        method:"post"
+    },
+     payment:{
+        url:`${backendDomain}/api/payment`,
+        method:"post"
+    },
+     getOrder:{
+        url:`${backendDomain}/api/order-list`,
+        method:"get"
+    },
+     allOrder:{
+        url:`${backendDomain}/api/all-order`,
+        method:"get"
+    },
+   
+}
+
+export default SummaryApi
