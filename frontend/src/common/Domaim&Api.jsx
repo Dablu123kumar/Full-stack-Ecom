@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 dotenv.config()
-const backendDomain = process.env.BACKEND_URL 
+const backendDomain = "https://mern-organic-foods-website.vercel.app/"
 const SummaryApi = {
     signUP:{
         url:`${backendDomain}/api/signup`,
