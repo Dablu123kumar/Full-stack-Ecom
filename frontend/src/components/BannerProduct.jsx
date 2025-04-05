@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import image1 from "../assest/banner/banner1.jpg";
 import image2 from "../assest/banner/banner4.jpg";
 import image3 from "../assest/banner/banner5.jpg";
-import image4 from "../assest/banner/banner6.jpg";
+// import image4 from "../assest/banner/banner6.jpg";
 import image5 from "../assest/banner/banner7.jpg";
 import image6 from "../assest/banner/banner8.jpg";
 import image7 from "../assest/banner/banner2.jpg";
@@ -27,7 +27,7 @@ const BannerProduct = () => {
 
   const desktopImages = [image19,image20,image21,image22,image13,image9,image10,image11,image14,image15,image16,image17,image18,];
 
-  const mobileImages = [image19,image20,image21,image22,image1,image2,image3,image4,image5,image6,image7,image8,image4];
+  const mobileImages = [image19,image20,image21,image22,image1,image2,image3,image5,image6,image7,image8];
   const nextImage = () => {
     if (desktopImages.length - 1 > currentImage) {
       setCurrentImage((preve) => preve + 1);

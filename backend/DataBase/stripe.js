@@ -1,6 +1,6 @@
 import Stripe from 'stripe'
 
- const STRIPE_SECRET_KEY = 'sk_test_51QBKsVKujXXkbC9vqCZaZkWm1zty2aMKo7dUAiWNKRGit5RK8wSfY1g3xaBapOvqJrXsmgcNUPcyWVHegibYIMVs00lXPh5aZL'
+ const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY 
 const stripe = Stripe(STRIPE_SECRET_KEY)
 
 

@@ -1,7 +1,7 @@
 
 // import dotenv from 'dotenv'
 // dotenv.config()
-const url = `https://api.cloudinary.com/v1_1/dwknsnl8p/image/upload`
+const url = import.meta.env.VITE_CLOUDINARY_URL
 
 const UploadImage = async(image) => {
     const formData = new FormData()

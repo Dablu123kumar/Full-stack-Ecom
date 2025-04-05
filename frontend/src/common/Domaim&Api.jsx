@@ -1,6 +1,5 @@
-import dotenv from 'dotenv'
-dotenv.config()
-const backendDomain = "https://mern-organic-foods-website.vercel.app/"
+
+const backendDomain = import.meta.env.VITE_BACKEND_URL
 const SummaryApi = {
     signUP:{
         url:`${backendDomain}/api/signup`,

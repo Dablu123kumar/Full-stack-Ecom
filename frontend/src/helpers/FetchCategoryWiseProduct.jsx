@@ -2,6 +2,7 @@
 import React from 'react'
 import SummaryApi from '../common/Domaim&Api'
 
+
 const FetchCategoryWiseProduct = async (category) => {
   const response = await fetch(SummaryApi.CategoryWiseProduct.url,{
     method:SummaryApi.CategoryWiseProduct.method,
@@ -14,6 +15,7 @@ const FetchCategoryWiseProduct = async (category) => {
     })
   })
   const dataResponse = await response.json()
+  //console.log(dataResponse)
   return dataResponse
 }
 
