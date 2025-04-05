@@ -8,7 +8,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-.env
 dist
 dist-ssr
 *.local
@@ -25,8 +24,8 @@ dist-ssr
 *.sw?
 
 #manual changes
-backend/node_modules
 frontend/node_modules
+backend/node_modules
 .env
 .frontend/.env
 .backend/.env
