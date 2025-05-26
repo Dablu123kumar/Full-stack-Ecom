@@ -17,6 +17,7 @@ import OrderPage from "../pages/OrderPage";
 import AllOrders from "../pages/AllOrders";
 import UpdatePassword from "../pages/UpdatePassword";
 import FarmerPannel from "../pages/FarmerPannelPage";
+import AllFarmers from "../pages/AllFarmers";
 
 
 const router  = createBrowserRouter([
@@ -81,6 +82,10 @@ const router  = createBrowserRouter([
                     {
                         path:'all-users',
                         element:<AllUser/>
+                    },
+                    {
+                        path:'all-farmers',
+                        element:<AllFarmers/>
                     },
                     {
                         path:'all-product',

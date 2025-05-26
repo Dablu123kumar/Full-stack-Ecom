@@ -79,10 +79,10 @@ const DisplayCategoryWiseProduct = ({ category, heading }) => {
                     </h2>
                     <p className=" text-slate-500"> {product?.category} </p>
                     <div className="  flex gap-3 md:gap-2 md:text-sm">
-                      <p className=" text-slate-500 line-through font-light">
+                      <p className=" text-red-500 line-through font-light">
                         {DisplayINRCurrency(product?.price)}{" "}
                       </p>
-                      <p className=" font-medium text-red-500">
+                      <p className=" font-medium text-green-500">
                         {DisplayINRCurrency(product?.sellingPrice)}{" "}
                       </p>
                     </div>

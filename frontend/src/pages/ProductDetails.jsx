@@ -8,6 +8,7 @@ import VerticalProductCard from "../components/VerticalProductCard";
 import DisplayCategoryWiseProduct from "../components/DisplayCategoryWisePriduct";
 import AddToCart from "../helpers/AddToCart";
 import Context from "../context/ContextApi";
+import DisplayImage from "../components/DisplayImage";
 
 const ProductDetails = () => {
   const [data, setData] = useState({
@@ -15,6 +16,8 @@ const ProductDetails = () => {
     brandName: "",
     category: "",
     productImage: [],
+    FLocation: "",
+    cirtificate: [],
     description: "",
     price: "",
     sellingPrice: "",
@@ -28,8 +31,11 @@ const ProductDetails = () => {
     y: 0,
   });
   const [zoomImage, setZoomImage] = useState(false);
-  const {fetchUserAddToCart} = useContext(Context)
-  const navigate = useNavigate()
+  const { fetchUserAddToCart } = useContext(Context);
+  const [openFullScreenCirtificate, setOpenFullScreenCirtificate] =
+    useState(false);
+  const [fullScreenCirtificate, setFullScreenCirtificate] = useState("");
+  const navigate = useNavigate();
   const fetchProductDetails = async () => {
     setLoading(true);
     const response = await fetch(SummaryApi.ProductDetails.url, {
@@ -72,17 +78,13 @@ const ProductDetails = () => {
     setZoomImage(false);
   };
 
-
-  const handleAddToCart = async(e,id)=>{
-    await AddToCart(e,id)
-    fetchUserAddToCart()
-
-  }
-  const handleByProduct = ()=>{
-    navigate('/cart')
-    
-
-  }
+  const handleAddToCart = async (e, id) => {
+    await AddToCart(e, id);
+    fetchUserAddToCart();
+  };
+  const handleByProduct = () => {
+    navigate("/cart");
+  };
 
   return (
     <div className=" container mx-auto p-4">
@@ -117,9 +119,12 @@ const ProductDetails = () => {
           <div className=" lg:h-full">
             {loading ? (
               <div className=" flex  gap-2 lg:flex-col overflow-scroll scroll-bar md:h-24 lg:h-full ">
-                {productImageListLoading.map((el,index) => {
+                {productImageListLoading.map((el, index) => {
                   return (
-                    <div className=" flex md:items-center h-20 w-20 bg-slate-300 rounded animate-pulse" key={'loadingImage'+index}></div>
+                    <div
+                      className=" flex md:items-center h-20 w-20 bg-slate-300 rounded animate-pulse"
+                      key={"loadingImage" + index}
+                    ></div>
                   );
                 })}
               </div>
@@ -182,26 +187,58 @@ const ProductDetails = () => {
                 <FaStarHalfAlt />
               </div>
               <div className=" flex items-center gap-4 text-xl lg:text-2xl">
-                <p className=" font-medium text-red-600">
+                <p className=" font-medium text-green-600">
                   {DisplayINRCurrency(data?.sellingPrice)}{" "}
                 </p>
-                <p className=" text-slate-600 line-through">
+                <p className=" text-red-600 line-through">
                   {DisplayINRCurrency(data?.price)}{" "}
                 </p>
               </div>
               <div className=" h-full md:max-w-64 flex justify-between items-center gap-3">
-                <button className=" border border-red-600 bg-white text-red-600 hover:bg-red-700 hover:text-white font-semibold px-2 py-1 rounded-full mt-2 text-sm" 
-                onClick={ handleByProduct} >
+                <button
+                  className=" border border-red-600 bg-white text-red-600 hover:bg-red-700 hover:text-white font-semibold px-2 py-1 rounded-full mt-2 text-sm"
+                  onClick={handleByProduct}
+                >
                   Buy Now
                 </button>
-                <button className="  bg-red-600 hover:bg-white hover:text-red-600 border hover:border-red-600 text-white font-medium  px-2 py-1 rounded-full mt-2 text-sm " onClick={(e) => handleAddToCart(e,data?._id)}>
+                <button
+                  className="  bg-red-600 hover:bg-white hover:text-red-600 border hover:border-red-600 text-white font-medium  px-2 py-1 rounded-full mt-2 text-sm "
+                  onClick={(e) => handleAddToCart(e, data?._id)}
+                >
                   Add To Cart
                 </button>
               </div>
               <div className="">
-                <p className=" text-slate-600 font-medium my-4">Description</p>
+                <p className=" text-slate-600 font-medium my-4">
+                  Description :
+                </p>
                 <p>{data?.description} </p>
               </div>
+              {data.FLocation && (
+                <div>
+                  <p className=" text-slate-600 font-medium my-4">Location :</p>
+                  <p>{data?.FLocation} </p>
+                </div>
+              )}
+              {data?.cirtificate[0] &&
+                data?.cirtificate.map((el, index) => {
+                  return (
+                    <div
+                      key={el._id + index}
+                      className="relative group h-10 w-10 object-scale-down"
+                    >
+                      <img
+                        src={el}
+                        alt=""
+                        className=" h-[100%] w-[100%] bg-slate-100 cursor-pointer"
+                        onClick={() => {
+                          setOpenFullScreenCirtificate(true);
+                          setFullScreenCirtificate(el);
+                        }}
+                      />
+                    </div>
+                  );
+                })}
             </div>
           </div>
         )}
@@ -212,6 +249,13 @@ const ProductDetails = () => {
           heading={" Recommended Product"}
         />
       )}
+
+       {/* display Cirtificate full screen */}
+        {
+            openFullScreenCirtificate && ( 
+            <DisplayImage onClose={()=>setOpenFullScreenCirtificate(false)} imagUrl={fullScreenCirtificate}/>
+        )
+        }
     </div>
   );
 };

@@ -41,10 +41,16 @@ function AdminPannel() {
               All Users
             </Link>
             <Link
+              to={"all-farmers"}
+              className=" px-2 py-1 hover:bg-slate-200 rounded-lg"
+            >
+              All Farmers
+            </Link>
+            <Link
               to={"all-product"}
               className=" px-2 py-1 hover:bg-slate-200 rounded-lg"
             >
-              Products
+              All Products
             </Link>
             <Link to={'all-order'} className=" px-2 py-1 hover:bg-slate-200 rounded-lg">All Orders</Link>
           </nav>

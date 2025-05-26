@@ -83,6 +83,7 @@ const VerticalProductCard = ({ category, heading }) => {
               );
             })
           : data.map((product, index) => {
+            console.log('product',product.FLocation)
               return (
                 <Link to={'/product/'+ product?._id}
                   className=" w-full  min-w-[290px] md:min-w[300px] max-w-[290px] md:max-w[300px]  bg-white rounded-sm shadow   "
@@ -101,10 +102,10 @@ const VerticalProductCard = ({ category, heading }) => {
                     </h2>
                     <p className=" text-slate-500"> {product?.category} </p>
                     <div className="  flex gap-3 md:gap-2 md:text-sm">
-                      <p className=" text-slate-500 line-through font-light">
+                      <p className=" text-red-500 line-through font-light">
                         {DisplayINRCurrency(product?.price)}{" "}
                       </p>
-                      <p className=" font-medium text-red-500">
+                      <p className=" font-medium text-green-500">
                         {DisplayINRCurrency(product?.sellingPrice)}/Kg{" "}
                       </p>
                     </div>
