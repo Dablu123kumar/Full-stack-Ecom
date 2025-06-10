@@ -125,7 +125,7 @@ const Cart = () => {
 
   return (
     <div className=" container mx-auto p-4">
-      <div className=" flex justify-center items-center h-[60vh] text-lg my-3 ">
+      <div className=" flex justify-center items-center  text-lg my-3  ">
         {data.length === 0 && !loading && (
          <div className=" relative h-80 w-72 bg-white ">
            <img src={emptyCartImg} alt="Empty cart image" className=" h-full w-full my-2 " />
@@ -137,7 +137,7 @@ const Cart = () => {
         )}
       </div>
 
-      <div className="flex flex-col lg:flex-row lg:justify-between gap-10 px-4 min-h-[calc(100vh-160px)]  ">
+      <div className="flex flex-col lg:flex-row lg:justify-between gap-10 px-4 min-h-[calc(100vh-170px)]  ">
         {/* // view product // */}
         <div className="  max-h-[calc(100vh-160px)] w-full max-w-3xl overflow-y-scroll scroll-bar">
           {loading
