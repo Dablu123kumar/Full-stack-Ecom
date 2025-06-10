@@ -1,7 +1,7 @@
 import stripe from '../../DataBase/stripe.js'
 import addToCartModel from '../../Model/cartProductModel.js'
 import ordermodel from '../../Model/orderModel.js'
-const endpointSecret = "whsec_28aa825512060da2431cf07e330846ff85a2b056ad407bba22796a048eb59e83"
+const endpointSecret = process.env.WEBHOOK_ENDPONIT_SECRETE
 
 async function getLineItems(lineItems) {
     let ProductItems = []

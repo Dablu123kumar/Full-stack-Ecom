@@ -25,7 +25,7 @@ const OrderPage = () => {
       <div>
         {data?.map((item, index) => {
           return (
-            <div key={item.userId + index} className=" p-4">
+            <div key={item?.userId + index+"indexuserid"} className=" p-4">
               <p className=" font-medium text-lg text-end">
                 {" "}
                 {moment(item?.createdAt).format("l")}
@@ -36,7 +36,7 @@ const OrderPage = () => {
                     {item?.productDetails?.map((product, index) => {
                       return (
                         <div
-                          key={product.productId + index}
+                          key={product.productId + index + "productId"}
                           className=" flex gap-3 "
                         >
                           <img

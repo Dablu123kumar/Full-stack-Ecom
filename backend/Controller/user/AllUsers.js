@@ -2,7 +2,7 @@ import UserModel from "../../Model/UserModel.js"
 
 const AllUsers = async (req,res) => {
 try {
-    console.log('userId', req.userId)
+    //console.log('userId', req.userId)
     const allUsers = await UserModel.find()
     res.status(200).json({
         message:"all users",

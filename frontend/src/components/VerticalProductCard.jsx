@@ -83,7 +83,7 @@ const VerticalProductCard = ({ category, heading }) => {
               );
             })
           : data.map((product, index) => {
-            console.log('product',product.FLocation)
+            //console.log('product',product.FLocation)
               return (
                 <Link to={'/product/'+ product?._id}
                   className=" w-full  min-w-[290px] md:min-w[300px] max-w-[290px] md:max-w[300px]  bg-white rounded-sm shadow   "
