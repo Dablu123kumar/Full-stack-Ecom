@@ -22,7 +22,7 @@ import UserModel from "../../Model/UserModel.js"
          res.status(400).json({
             message: 'User Updated',
             success:true,
-            data:UpdateUser
+            data:updateUser
         })
          
        } catch (error) {
